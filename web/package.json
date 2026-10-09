@@ -26,6 +26,7 @@
     "tailwindcss": "^4.3.2",
     "typescript": "^7.0.2",
     "vite": "^8.1.4",
+    "vite-plugin-react-click-to-component": "^4.2.3",
     "vitest": "^4.1.10"
   }
 }

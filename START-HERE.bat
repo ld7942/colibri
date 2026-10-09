@@ -17,7 +17,9 @@ title colibri
 cd /d "%~dp0"
 
 set "COLI_LAUNCHER="
+rem %~dp0 is the folder where the current batch file is located.
 if exist "%~dp0c\coli" set "COLI_LAUNCHER=%~dp0c\coli"
+echo COLI_LAUNCHER=%COLI_LAUNCHER%
 if not defined COLI_LAUNCHER if exist "%~dp0coli" set "COLI_LAUNCHER=%~dp0coli"
 if not defined COLI_LAUNCHER (
     echo This file belongs at the top of the colibri folder, next to the c folder.
