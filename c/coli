@@ -3482,11 +3482,10 @@ def main():
                         default=os.environ.get("COLI_POLICY","quality"),
                         help="resource policy (explicit --topk/--topp overrides warn and proceed)")
     common.add_argument("--repin", type=int, default=0, help="adapt RAM/VRAM experts every N tokens")
-    # Explicit, default-off opt-in to the qualified native XDNA2 (Ryzen AI NPU)
-    # lane. Deliberately NOT a --policy value: --policy chooses how the planner may
-    # spend memory, this chooses a compute device, and a user wanting quality
-    # planning ON the NPU must be able to say both. Deliberately not inferred from
-    # hardware either -- the reduced-precision consequence means the user has to ask.
+    # 显式、默认关闭的可选启用，用于进入经鉴定的原生 XDNA2（Ryzen AI NPU）计算通路。
+    # 刻意不设为 --policy 的值：--policy 决定规划器如何分配内存，此处选择计算设备，
+    # 想要在 NPU 上同时启用质量规划的用户必须能够同时指定两者。
+    # 同样刻意不根据硬件自动推断——精度降低的后果意味着用户必须主动明确选择。
     common.add_argument("--xdna", action="store_true",
                         help="experimental: run qualified GLM operations on the AMD XDNA2 NPU "
                              "(reduced-precision BF16 path; output may differ; unsupported "
